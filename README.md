@@ -13,7 +13,8 @@
 9. For row-columns: https://getbootstrap.com/docs/5.0/layout/grid/#row-columns
 10. For symbols: https://www.compart.com/de/unicode/
 11. For JS string reference: https://www.w3schools.com/jsref/jsref_obj_string.asp 
-
+12. API key open weather: https://home.openweathermap.org/api_keys
+13. Math.round: https://developer.mozilla.org/es/docs/Web/JavaScript/Reference/Global_Objects/Math/round 
 
 . For Bootstrap 4 Grid Examples: https://www.w3schools.com/bootstrap4/bootstrap_grid_examples.asp
 
