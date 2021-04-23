@@ -72,7 +72,7 @@ var CityForecast = function (city, lon, lat) {
 
 var displayTemperature = function(element, temperature) {
     var temperatureEl = document.querySelector(element);
-    var elementText = Math.round10 (temperature);
+    var elementText = Math.round(temperature);
     temperatureEl.textContent = elementText;
 }
 
@@ -83,7 +83,7 @@ var TodaysForecast = function(forecast) {
 
     var weathericonEl = document.querySelector('#icon-0');
     var currentIcon  = forecast.current.weather[0].icon;
-    weathericonEl.setAttribute('src', `http://openweathermap.org/img/wn/${currentIcon}.png`);
+    weathericonEl.setAttribute('src', 'https://openweathermap.org/img/wn/${currentIcon}.png');
     weathericonEl.setAttribute('alt', forecast.current.weather[0].main)
 
     displayTemperature('#temp-0', forecast.current['temp']);
