@@ -1,1 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
 
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Smart Weather Dashboard</title>
+    <!-- Links to Bootstrap, Font Awesome, Stylesheet css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+        integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous" />
+    <link rel="stylesheet" href="assets/style.css" />
+</head>
+
+<body>
+
+    <!-- Header of Webpage -->
+    <header class="bg-primary text-light p-2">
+        <h1 class="mx-auto" style="width: 500px"><i class="ml-3 fas fa-cloud-sun-rain mr-3"></i> Weather Dashboard <i
+                class="ml-3 fas fa-cloud-sun-rain mr-3"></i></h1>
+    </header>
+
+    <!-- Section to search for a city and to display results -->
+    <section class="row p-1 p-md-3">
+
+        <div class="col-12 col-md-3">
+
+            <!-- First section to search for a city -->
+            <div class="card border-primary mb-3">
+                <div class="card-header">Search for a city</div>
+                <div class="input-group mb-4">
+                    <input type="text" class="form-input-group-text col-9 m-2" placeholder="City search" id="city-input"
+                        name="city" aria-label="city-search" aria-describedby="basic-addon1">
+                    <button type="button" class="btn btn-primary" id="search-btn"> <i
+                            class="fas fa-search-location"></i> </button>
+                </div>
+            </div>
+
+            <!-- Recent cities' list -->
+            <div class="card border-primary mb-3" id="searched-cities">
+                <div class="card-header text-uppercase text-dark bg-light mb-4 mx-auto">Recent searched cities</div>
+            </div>
+        </div>
+
+        <div class="col-12 col-md-9 today-forecast hide">
+
+            <!-- Current city forecast -->
+            <div class="card border-primary mt-4 mt-md-0">
+                <div class="card-header text-uppercase bg-secondary text-light"></div>
+                <div class="container">
+
+                    <!-- Current weather icon and city searched -->
+                    <div class="row">
+                        <div class="ml-3">
+                            <span class="align-middle" id="city-name"></span>
+                            <img class="weather-icon" icon="icon-0" />
+                        </div>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-12 col-md-6">
+                            <p class="pl-2">Temp: <span id="temp-0"></span> &#8457</p>
+                            <p class="pl-2">Wind: <span id="wind-0"></span> MPH &#127788</p>
+                        </div>
+                        <div class="col-12 col-md-6">
+                            <p class="pl-2">Humidity: <span id="humidity-0"></span> &#65285 <i class="fas fa-tint"></i>
+                            </p>
+                            <p class="pl-2">UV Index: <span id="UVindex-0"></span> <i class="far fa-sun"></i></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <br>
+
+            <!-- Five days forecast -->
+            <div class="card border-primary mt-4 mt-md-0">
+                <div class="card-header text-uppercase bg-secondary text-light">5-Day Forecast</div>
+                <div class="container p-2">
+                    <div class="row row-cols-1 row-cols-md-5">
+
+                        <!-- Day +1 -->
+                        <div class="col">
+                            <div class="card text-white bg-primary mb-3 p-2 mb-md-0">
+                                <p class="badge bg-warning text-dark" id="day1"></p>
+                                <div class="align-middle">
+                                    <img class="weather-icon" id="icon-1">
+                                </div>
+                                <p class="mb-1">Temp: <span id="temp-1"></span> &#8457 </p>
+                                <p class="mb-1">Wind: <span id="wind-1"></span> MPH </p>
+                                <p class="mb-1">Humidity: <span id="humidity-1"></span> &#65285 </p>
+                            </div>
+                        </div>
+
+                        <!-- Day +2 -->
+                        <div class="col">
+                            <div class="card text-white bg-primary mb-3 p-2 mb-md-0">
+                                <p class="badge bg-warning text-dark" id="day2"></p>
+                                <div class="align-middle">
+                                    <img class="weather-icon" id="icon-2">
+                                </div>
+                                <p class="mb-1">Temp: <span id="temp-2"></span> &#8457 </p>
+                                <p class="mb-1">Wind: <span id="wind-2"></span> MPH </p>
+                                <p class="mb-1">Humidity: <span id="humidity-2"></span> &#65285 </p>
+                            </div>
+                        </div>
+
+                        <!-- Day +3 -->
+                        <div class="col">
+                            <div class="card text-white bg-primary mb-3 p-2 mb-md-0">
+                                <p class="badge bg-warning text-dark" id="day3"></p>
+                                <div class="align-middle">
+                                    <img class="weather-icon" id="icon-3">
+                                </div>
+                                <p class="mb-1">Temp: <span id="temp-3"></span> &#8457 </p>
+                                <p class="mb-1">Wind: <span id="wind-3"></span> MPH </p>
+                                <p class="mb-1">Humidity: <span id="humidity-3"></span> &#65285 </p>
+                            </div>
+                        </div>
+
+                        <!-- Day +4 -->
+                        <div class="col">
+                            <div class="card text-white bg-primary mb-3 p-2 mb-md-0">
+                                <p class="badge bg-warning text-dark" id="day4"></p>
+                                <div class="align-middle">
+                                    <img class="weather-icon" id="icon-4">
+                                </div>
+                                <p class="mb-1">Temp: <span id="temp-4"></span> &#8457 </p>
+                                <p class="mb-1">Wind: <span id="wind-4"></span> MPH </p>
+                                <p class="mb-1">Humidity: <span id="humidity-4"></span> &#65285 </p>
+                            </div>
+                        </div>
+
+                        <!-- Day +5 -->
+                        <div class="col">
+                            <div class="card text-white bg-primary mb-3 p-2 mb-md-0">
+                                <p class="badge bg-warning text-dark" id="day5"></p>
+                                <div class="align-middle">
+                                    <img class="weather-icon" id="icon-5">
+                                </div>
+                                <p class="mb-1">Temp: <span id="temp-5"></span> &#8457 </p>
+                                <p class="mb-1">Wind: <span id="wind-5"></span> MPH </p>
+                                <p class="mb-1">Humidity: <span id="humidity-5"></span> &#65285 </p>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+    </section>
+
+    <footer>
+        <br>
+        <hr>
+        <h1>
+            Made within Bootcamp Program
+            <br>
+            © 2021
+        </h1>
+        <hr>
+        <br>
+    </footer>
+
+    <!-- Links to Moment, Scrypt -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
+    <script src="assets/script.js"></script>
+
+</body>
+
+</html>
