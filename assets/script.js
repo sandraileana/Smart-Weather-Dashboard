@@ -83,7 +83,7 @@ var TodaysForecast = function(forecast) {
 
     var weathericonEl = document.querySelector('#icon-0');
     var currentIcon  = forecast.current.weather[0].icon;
-    weathericonEl.setAttribute('src', 'https://openweathermap.org/img/wn/${currentIcon}.png');
+    weathericonEl.setAttribute('src', 'https://openweathermap.org/img/w/${weather.weather[0].icon}.png');
     weathericonEl.setAttribute('alt', forecast.current.weather[0].main)
 
     displayTemperature('#temp-0', forecast.current['temp']);
@@ -114,22 +114,30 @@ var TodaysForecast = function(forecast) {
     }
 }
 
+// Function to display day, temperature, wind and humidity of next 5 days
+
 var FiveDaysForecast = function(forecast){
     for (var i = 1; i <6; i++){
        
+        // To display days
         var date = document.querySelector('#day-' + i);
         date.textContent = moment().add(i, 'days').format('M/D/YYYY');
 
+
+        // To display weather icon
         var iconImage = document.querySelector('#icon-' + i);
         var iconCode = forecast.daily[i].weather[0].icon;
         iconImage.setAttribute('src', 'http://openweathermap.org/img/wn/${iconCode}.png');
         iconImage.setAttribute('alt', forecast.daily[i].weather[0].main);
 
+        // To display temperature
         displayTemperature('#temp-' + i, forecast.daily[i].temp.day);
 
+        // To display wind speed
         var windSpan = document.querySelector('#wind-' + i);
         windSpan.textContent = forecast.daily[i].wind;
 
+        // To display humidity
         var humiditySpan = document.querySelector('#humidity-' + i);
         humiditySpan.textContent = forecast.daily[i].humidity;
 
