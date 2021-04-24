@@ -127,7 +127,7 @@ var FiveDaysForecast = function(forecast){
         // To display weather icon
         var iconImage = document.querySelector('#icon-' + i);
         var iconCode = forecast.daily[i].weather[0].icon;
-        iconImage.setAttribute('src', 'http://openweathermap.org/img/wn/${iconCode}.png');
+        iconImage.setAttribute('src', `http://openweathermap.org/img/wn/${iconCode}.png`);
         iconImage.setAttribute('alt', forecast.daily[i].weather[0].main);
 
         // To display temperature
