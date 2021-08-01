@@ -102,15 +102,15 @@ var TodaysForecast = function(forecast) {
         case (UVindex0 <= 2):
             UVindexEl.className = 'badge badge-success';
             break;
-            case (UVindex0 <= 5):
-                UVindexEl.className = 'badge badge-warning';
-                break;
-                case (UVindex0 <= 7):
-                    UVindexEl.className = 'badge badge-danger';
-                    break;
-                    default:
-                        UVindexEl.className = 'badge text-light';
-                        UVindexEl.setAttribute('style', 'background-color: #553C7B');
+        case (UVindex0 <= 5):
+            UVindexEl.className = 'badge badge-warning';
+            break;
+        case (UVindex0 <= 7):
+            UVindexEl.className = 'badge badge-danger';
+            break;
+        default:
+            UVindexEl.className = 'badge text-light';
+            UVindexEl.setAttribute('style', 'background-color: #553C7B');
     }
 }
 
