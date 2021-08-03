@@ -1,6 +1,55 @@
 # Smart-Weather-Dashboard
 
+## Description
+
 Aplication is able to search for a city
+
+
+## Table of Contents
+
+* [Installation](#installation)
+* [Usage](#usage)
+* [Screenshots](#screenshots)
+* [Credits](#credits)
+* [References](#references)
+
+
+## Installation
+
+For usage and be able to display functionality:
+
+1. Clone the repository: https://github.com/sandraileana/Smart-Weather-Dashboard.git and open it on browser.
+
+OR
+
+2. Open directly through https://sandraileana.github.io/Smart-Weather-Dashboard/
+
+
+## Usage
+
+After this the user will be able to:
+
+  * Search for a city.
+
+  * Obtain actual and 5-day forecast weather.
+
+  * Last 10 cities will be saved in recent searched cities
+
+
+## Screenshots
+
+1. Weather Dashboard
+![Site](./assets/WeatherDashboard.png)
+
+2. Weather Dashboard Example
+![Site](./assets/WeatherDashboardExample.png)
+
+
+## Credits
+
+* Author: Sandra Pérez
+* [Github](https://github.com/sandraileana)
+
 
 ## References
 1. For fas fa clou-sun-rain: https://fontawesome.com/icons/cloud-sun-rain
